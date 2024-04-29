@@ -5,10 +5,13 @@ Created on Mon Apr 29 12:19:03 2024
 @author: Acer
 """
 
+
 points = [(2,3),(4,5),(8,12),(11,23),(4,5)]
 distances = list()
 
 
+
+"calculate difference between two points in euclead space"
 def euclideanDistance(p1,p2):
     difference_X = p2[0] - p1[0]
     difference_Y = p2[1] - p1[1]
@@ -16,11 +19,13 @@ def euclideanDistance(p1,p2):
 
 
 
+"iteration for calculate distance between each pair of points"
 for i in range(len(points)):
-    " i+1 "
+    "i+1 avoids to duplicate control"
     for j in range(i+1 , len(points)):
         if(i != j):
             print(points[i], "--",points[j])
+            
             distances.append(euclideanDistance(points[i],points[j]))
 
 print("min distance : ", min(distances))
